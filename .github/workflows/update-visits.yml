@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '*/5 * * * *' # Runs every 5 minutes
+    - cron: '*/3 * * * *'
 
 jobs:
   update-visits:
@@ -27,7 +27,7 @@ jobs:
       - name: Update README.md
         run: |
           visits=${{ steps.increment.outputs.visits }}
-          badge="![Visits](https://img.shields.io/badge/Visits-$visits-blue)"
+          badge="![Visits](https://img.shields.io/badge/Visits-17304-blue)"
           sed -i 's|!\[Visits\](https://img.shields.io/badge/Visits-.*-blue)|'"$badge"'|' README.md
 
       - name: Commit changes
